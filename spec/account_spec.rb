@@ -15,6 +15,13 @@ describe Account do
       expect { account.deposit(1000) }.to change { account.balance }.by(1000)
       expect(account.balance).to eq(1000)
     end
+
+    it 'adds the details of the deposit to the transaction_history array' do
+      account.deposit(1000)
+      account.deposit(500)
+      expect(account.transaction_history).to include({:date=>Date.today, :credit=>1000, :debit=>nil, :balance=>1000})
+      expect(account.transaction_history).to include({:date=>Date.today, :credit=>500, :debit=>nil, :balance=>1500})
+    end
   end
 
   describe '#withdraw' do
@@ -26,6 +33,14 @@ describe Account do
 
     it 'displays an error when the withdrawal amount is greater than the balance of the account' do
       expect { account.withdraw(500) }.to raise_error "Insufficient balance to make this withdrawal"
+    end
+
+    it 'adds the details of the withdrawal to the transaction_history array' do
+      account.deposit(1000)
+      account.withdraw(500)
+      account.withdraw(100)
+      expect(account.transaction_history).to include({:date=>Date.today, :credit=>nil, :debit=>500, :balance=>500})
+      expect(account.transaction_history).to include({:date=>Date.today, :credit=>nil, :debit=>100, :balance=>400})
     end
   end
 end

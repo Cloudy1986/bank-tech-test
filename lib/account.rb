@@ -1,3 +1,5 @@
+require 'date'
+
 class Account
   attr_reader :balance, :transaction_history
 
@@ -6,18 +8,21 @@ class Account
     @transaction_history = []
   end
 
-  def deposit(amount)
-    @balance += amount
+  def deposit(deposit_amount)
+    @balance += deposit_amount
+    @transaction_history << { :date => Date.today, :credit => deposit_amount, :debit => nil, :balance => @balance }
   end
 
-  def withdraw(amount)
-    fail "Insufficient balance to make this withdrawal" if insufficient_balance?(amount)
-    @balance -= amount
+  def withdraw(withdraw_amount)
+    fail "Insufficient balance to make this withdrawal" if insufficient_balance?(withdraw_amount)
+    @balance -= withdraw_amount
+    @transaction_history << { :date => Date.today, :credit => nil, :debit => withdraw_amount, :balance => @balance }
   end
-end
 
-private
+  private
 
-def insufficient_balance?(amount)
-  amount > @balance
+  def insufficient_balance?(withdraw_amount)
+    withdraw_amount > @balance
+  end
+
 end
