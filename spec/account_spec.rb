@@ -9,6 +9,15 @@ describe Account do
   describe '#deposit' do
     it 'adds the deposit to the balance of the account' do
       expect { account.deposit(1000) }.to change { account.balance }.by(1000)
+      expect(account.balance).to eq(1000)
+    end
+  end
+
+  describe '#withdraw' do
+    it 'subtracts the withdrawal from the balance of the account' do
+      account.deposit(1000)
+      expect { account.withdraw(500) }.to change { account.balance }.by(-500)
+      expect(account.balance).to eq(500)
     end
   end
 end
