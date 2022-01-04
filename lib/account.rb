@@ -20,6 +20,11 @@ class Account
     @transaction_history << { date: Date.today, credit: nil, debit: withdraw_amount, balance: @balance }
   end
 
+  def print_statement
+    puts 'date || credit || debit || balance'
+    @transaction_history.reverse.each { |transaction| puts "#{transaction[:date]} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]}" }
+  end
+
   private
 
   def insufficient_balance?(withdraw_amount)

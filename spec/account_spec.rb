@@ -43,4 +43,13 @@ describe Account do
       expect(account.transaction_history).to include({ date: Date.today, credit: nil, debit: 100, balance: 400 })
     end
   end
+
+  describe '#print_statement' do
+    it 'prints out the transaction history for the account' do
+      account.deposit(1000)
+      account.withdraw(500)
+      account.withdraw(100)
+      expect { account.print_statement }.to output.to_stdout
+    end
+  end
 end
