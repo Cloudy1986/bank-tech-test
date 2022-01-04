@@ -6,6 +6,10 @@ describe Account do
     expect(account.balance).to eq(0)
   end
 
+  it 'has an empty transaction history when initialised' do
+    expect(account.transaction_history).to be_empty
+  end
+
   describe '#deposit' do
     it 'adds the deposit to the balance of the account' do
       expect { account.deposit(1000) }.to change { account.balance }.by(1000)
