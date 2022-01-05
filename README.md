@@ -1,5 +1,6 @@
 Bank Tech Test
 -----------------
+Week 10 of the Makers Academy bootcamp. This is a practice tech test. Requirements, acceptance criteria, user stories, how to run the code, technologies used and test coverage are detailed below.
 
 ## Requirements
 
@@ -55,7 +56,7 @@ I want to print out transactions for my account
 So that I can see the deposits and withdrawals I've made
 ```
 
-## Running the code
+## How to run the code
 
 - Clone this repo locally
 - Navigate to this repo locally
