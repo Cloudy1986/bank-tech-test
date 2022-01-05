@@ -75,6 +75,8 @@ So that I can see the deposits and withdrawals I've made
 - View balance by running `my_account.balance`
 - Print history of transactions by running `Statement.print_statement(my_account.transaction_history)`
 
+![Screenshot 2022-01-05 at 14 32 24](https://user-images.githubusercontent.com/87817889/148234959-94fd5144-dbc0-4458-b3bc-206d6c2a4e99.png)
+
 ## Technologies used
 
 - Ruby for development language
