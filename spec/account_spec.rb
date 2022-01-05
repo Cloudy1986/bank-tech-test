@@ -31,7 +31,7 @@ describe Account do
       expect(account.balance).to eq(500)
     end
 
-    it 'displays an error when the withdrawal amount is greater than the balance of the account' do
+    it 'raises an error when the withdrawal amount is greater than the balance of the account' do
       expect { account.withdraw(500) }.to raise_error 'Insufficient balance to make this withdrawal'
     end
 
