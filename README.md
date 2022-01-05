@@ -24,6 +24,12 @@ date || credit || debit || balance
 10/01/2023 || 1000.00 || || 1000.00
 ```
 
+## Approach taken
+
+- Break requirements and acceptance criteria into user stories
+- Take a test driven development by writing tests first using a red, green, refactor, commit cycle
+- Lots of small commits with clear commit messages
+
 ## User stories
 
 ```
