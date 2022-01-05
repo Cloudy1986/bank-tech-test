@@ -1,4 +1,5 @@
 require 'date'
+require './lib/statement'
 
 class Account
   attr_reader :balance, :transaction_history
@@ -18,13 +19,6 @@ class Account
 
     @balance -= withdraw_amount
     @transaction_history << { date: Date.today, credit: nil, debit: withdraw_amount, balance: @balance }
-  end
-
-  def print_statement
-    puts 'date || credit || debit || balance'
-    @transaction_history.reverse.each do |transaction|
-      puts "#{transaction[:date]} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]}"
-    end
   end
 
   private
