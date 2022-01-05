@@ -88,4 +88,4 @@ So that I can see the deposits and withdrawals I've made
 ## Test coverage
 
 - 100%
-- 69 lines covered by tests with 0 lines missing
+- 71 lines covered by tests with 0 lines missing
