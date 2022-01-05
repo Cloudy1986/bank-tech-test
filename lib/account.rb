@@ -22,7 +22,9 @@ class Account
 
   def print_statement
     puts 'date || credit || debit || balance'
-    @transaction_history.reverse.each { |transaction| puts "#{transaction[:date]} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]}" }
+    @transaction_history.reverse.each do |transaction|
+      puts "#{transaction[:date]} || #{transaction[:credit]} || #{transaction[:debit]} || #{transaction[:balance]}"
+    end
   end
 
   private
