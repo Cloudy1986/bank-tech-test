@@ -9,7 +9,8 @@ describe Statement do
       {:date=>2022-01-05, :credit=>500, :debit=>nil, :balance=>500},
       {:date=>2022-01-05, :credit=>nil, :debit=>100, :balance=>400}
     ]
-    expect { Statement.print_statement(account_transaction_history) }.to output("date || credit || debit || balance\n" + "2022-01-05 || || 100 || 400\n" +
-      "2022-01-05 || 500 || || 500\n").to_stdout
+    p account_transaction_history
+    expect { Statement.print_statement(account_transaction_history) }.to output("date || credit || debit || balance\n" + "05/01/2022 || || 100.00 || 400.00\n" +
+      "05/01/2022 || 500.00 || || 500.00\n").to_stdout
   end
 end
