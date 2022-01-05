@@ -1,5 +1,7 @@
-class Statement
+# frozen_string_literal: true
 
+# Statement class for printing a statement
+class Statement
   def self.print_statement(account_transaction_history)
     header
     account_transaction_history.reverse.each do |transaction|
@@ -9,6 +11,7 @@ class Statement
 
   class << self
     private
+
     def format_number(number)
       '%.2f' % number if number.is_a?(Numeric)
     end
