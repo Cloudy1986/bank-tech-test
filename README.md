@@ -73,7 +73,7 @@ So that I can see the deposits and withdrawals I've made
 - Add money to the account by running `my_account.deposit(<amount>)`
 - Withdraw money by running `my_account.withdraw(<amount>)`
 - View balance by running `my_account.balance`
-- Print history of transactions by running `my_account.print_statement`
+- Print history of transactions by running `Statement.print_statement(my_account.transaction_history)`
 
 ## Technologies used
 
