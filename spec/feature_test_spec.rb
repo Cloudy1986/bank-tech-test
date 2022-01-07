@@ -3,6 +3,10 @@
 require './lib/account'
 
 describe 'Bank Account program' do
+  before(:each) do
+    allow(Date).to receive(:today).and_return Date.new(2022,1,5)
+  end
+
   it 'creates an account, makes some deposits, makes some withdrawals and prints a statement' do
     my_account = Account.new
     my_account.deposit(1000)

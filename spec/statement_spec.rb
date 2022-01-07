@@ -3,6 +3,10 @@
 require './lib/statement'
 
 describe Statement do
+  before(:each) do
+    allow(Date).to receive(:today).and_return Date.new(2022,1,5)
+  end
+
   it 'prints out the transaction history for the account' do
     account_transaction_history = [
       { date: Date.today, credit: 500, debit: nil, balance: 500 },
