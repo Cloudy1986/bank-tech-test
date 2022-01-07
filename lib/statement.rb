@@ -3,7 +3,7 @@
 # Statement class for printing a statement
 class Statement
   def self.print_statement(account_transaction_history)
-    header
+    output_header
     account_transaction_history.reverse.each do |transaction|
       puts "#{transaction[:date]} || #{format_number(transaction[:credit])} || #{format_number(transaction[:debit])} || #{format_number(transaction[:balance])}"
     end
@@ -16,7 +16,7 @@ class Statement
       '%.2f' % number if number.is_a?(Numeric)
     end
 
-    def header
+    def output_header
       puts 'date || credit || debit || balance'
     end
   end
