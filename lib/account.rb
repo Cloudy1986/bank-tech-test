@@ -14,14 +14,14 @@ class Account
 
   def deposit(deposit_amount)
     @balance += deposit_amount
-    @transaction_history << { date: Date.today.strftime('%d/%m/%Y'), credit: deposit_amount, debit: nil, balance: @balance }
+    @transaction_history << { date: Date.today, credit: deposit_amount, debit: nil, balance: @balance }
   end
 
   def withdraw(withdraw_amount)
     raise 'Insufficient balance to make this withdrawal' if insufficient_balance?(withdraw_amount)
 
     @balance -= withdraw_amount
-    @transaction_history << { date: Date.today.strftime('%d/%m/%Y'), credit: nil, debit: withdraw_amount, balance: @balance }
+    @transaction_history << { date: Date.today, credit: nil, debit: withdraw_amount, balance: @balance }
   end
 
   private
